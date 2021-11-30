@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Brush Script MT';
+    src: url('font/BrushScriptMT.woff2') format('woff2'),
+        url('font/BrushScriptMT.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+html,body{margin:0;}
+h1,h2,h3,h4,h5,h6,p,figure{margin:0;}
+ul,li{
+    list-style-type:none;
+    padding:0; margin:0;
+}
+a{
+    color:#333; 
+    text-decoration: none;
+}
+img{vertical-align: middle;}
+table{border-collapse: collapse;}
+*{box-sizing: border-box;}
+
+$point-color : #fed136;
+$content-width : 70%;
+$title : 54px;
+$p100 : 100px 0;
+
+@import '_media';
+$point-color : #fed136;
+$content-width : 70%;
+$title : 54px ;
+$p100 : 100px 0 ;
+
+@mixin h2{
+    h2{ 
+        font-size:$title; 
+        font-family: 'Brush Script MT';
+    }
+    >p{margin:1% 0 5%;}
+}
+
+@mixin flex($just,$items,$dir,$wrap){
+    display: flex;
+    justify-content: $just;
+    align-items: $items;
+    flex-direction: $dir;
+    flex-wrap:$wrap;
+}
+@mixin  btn {
+    display:inline-block;
+    padding:15px 30px;
+    color:#fff;
+    background: $point-color;
+}
+
+// header
+header{
+    position:fixed;
+    left:0; top:0;
+    width:100%;
+    padding:2% 0;
+
+    >div{
+        width:$content-width; margin:0 auto;
+        // display:flex;
+        // justify-content: space-between;
+        // align-items: center;
+        @include flex(space-between,center,row,nowrap);
+
+        h1{
+            a{
+                font-size:0;
+                width:93px; height:36px;
+                background: url('../img/logo.png') no-repeat;
+                display:block;
+            }
+        }
+        nav{
+            a{
+                color:#fff; padding:0 24px;
+                display:inline-block;
+            }
+        }
+    }
+}
+
+// footer
+footer{
+    padding:3% 0%;
+    text-align: center;
+}
+
+
+
